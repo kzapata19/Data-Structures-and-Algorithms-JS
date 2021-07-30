@@ -7,8 +7,7 @@
 */
 
 function isPalindrome(str) {
-    let reversed = str.lowercase().split("").reverse()
-    
+    let reversed = str.lowercase().split("").reverse();
 }
 
 // describe("Palindrome", () => {
