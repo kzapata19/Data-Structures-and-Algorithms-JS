@@ -25,17 +25,24 @@ Constraints:
 
 // Time complexity: O(n); Space complexity: O(1)
 var containsDuplicate = function(nums) {
-    let hash = nums.reduce((dict, num) => {
-        if(dict[num]) {
-            dict[num]++;
-        } else {
-            dict[num] = 1;
-        }
-        return dict;
-    }, {})
+    // let hash = nums.reduce((dict, num) => {
+    //     if(dict[num]) {
+    //         dict[num]++;
+    //     } else {
+    //         dict[num] = 1;
+    //     }
+    //     return dict;
+    // }, {})
 
-    for(let elem in hash) {
-        if(hash[elem] > 1) return true
+    // for(let elem in hash) {
+    //     if(hash[elem] > 1) return true
+    // }
+    // return false;
+    let map = {}
+    for(let i = 0; i < nums.length; i++) {
+        map[nums[i]] = map[nums[i]] + 1 || 1
+        if(map[nums[i]] > 1) return true
     }
     return false;
-};
+}
+
